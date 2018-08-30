@@ -1,0 +1,19 @@
+#% RAML 1.0 ErrorDto
+{
+    "type": "object",
+    "properties": {
+        "status":{
+            "type": "integer"
+        },
+        "messages": {
+            "type": "array",
+            "items": "string"
+        },
+        "code":{
+            "type": "integer"
+        },
+        "header?":{
+            "type": "string"
+        }
+    }
+}

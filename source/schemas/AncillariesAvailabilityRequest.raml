@@ -1,0 +1,55 @@
+#% RAML 1.0 AncillariesAvailabilityRequest
+{
+    type: object,
+    properties: {
+        siteCode: {
+            type: SiteCode
+        },
+        language: {
+            type: Language
+        },
+        brand: {
+            type: string
+        },
+        season: {
+            type: string
+        },
+        catalog: {
+            type: string
+        },
+        productId: {
+            type: string
+        },
+        departureAirportCode: {
+            type: string
+        },
+        arrivalAirportCode: {
+            type: string
+        },
+        locationCode: {
+            type: string
+        },
+        outboundStartDate: {
+            type: date-only
+        },
+        inboundStartDate: {
+            type: date-only
+        },
+        inboundTransportClass: {
+            type: string
+        },
+        outboundTransportClass: {
+            type: string
+        },
+        outboundCarrierCode: {
+            type: string
+        },
+        inboundCarrierCode: {
+            type: string
+        },
+        passengers: {
+            type: array,
+            items: SimplePassengerDto
+        }
+    }
+}

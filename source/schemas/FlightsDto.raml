@@ -1,0 +1,18 @@
+#% RAML 1.0 FlightsDto
+{
+    "type": "object",
+    "properties": {
+        "departureAirportCode": {
+            "type": "string"
+        },
+        "arrivalAirportCode": {
+             "type": "string"
+        },
+        "outbound": {
+            "type": "FlightBoundDto"
+        },
+        "inbound": {
+            "type": "FlightBoundDto"
+        }
+    }
+}

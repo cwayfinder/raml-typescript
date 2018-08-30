@@ -1,0 +1,34 @@
+#% RAML 1.0 RoomProfileDto
+{
+    "type": "object",
+    "properties": {
+        "code": {
+            "type": "string"
+        },
+        "adults": {
+            "type": "number",
+            "format" : "int"
+        },
+        "children": {
+            "type": "number",
+            "format" : "int"
+        },
+        "infants": {
+            "type": "number",
+            "format" : "int"
+        },
+        "description": {
+            "type": "string"
+        },
+        "guestList": {
+            "type": "array",
+            "items": "string"
+        },
+        "mealPlan": {
+            "type": "string"
+        },
+        "preference?": {
+            "type": "string"
+        }
+    }
+}

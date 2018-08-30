@@ -1,0 +1,21 @@
+#% RAML 1.0 ExtraSegmentDto
+{
+    "type": "object",
+    "properties": {
+        "type":{
+            "type": "SegmentType"
+        },
+        "description": {
+            "type": "string"
+        },
+        "defaultOption?": {
+            "type": "string"
+        },
+        "purchasedOption?": {
+            "type": "string"
+        },
+        "options": {
+            "type": "ExtraOptionDto[]"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "total": 30,
+  "pageSize": 20,
+  "pageNumber": 1,
+  "items": [
+    {
+      "id": 1026467599,
+      "value": "*"
+    },
+    {
+      "id": 1751551134,
+      "value": "NVLW"
+    },
+    {
+      "id": 1891269923,
+      "value": "NAVL"
+    },
+    {
+      "id": 1634826036,
+      "value": "NUSA"
+    },
+    {
+      "id": 792505269,
+      "value": "NVLI"
+    }
+  ]
+}

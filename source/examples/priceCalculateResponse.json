@@ -1,0 +1,46 @@
+{
+  "totalExtraAmount": 40,
+  "totalAmount": 166.55,
+  "currency": "EUR",
+  "insuranceFee": 10.0,
+  "totalExtraAmountWithFee": 176.55,
+  "extras": [
+    {
+      "id": "LUGGAGE",
+      "recipients": [
+        {
+          "type": "PASSENGER",
+          "id": "001",
+          "segments": [
+            {
+              "type": "INBOUND",
+              "calculatedOption": "HV15KU",
+              "price": 10
+            },
+            {
+              "type": "OUTBOUND",
+              "calculatedOption": "HV15KU",
+              "price": 10
+            }
+          ]
+        },
+        {
+          "type": "PASSENGER",
+          "id": "002",
+          "segments": [
+            {
+              "type": "INBOUND",
+              "calculatedOption": "5P15KT",
+              "price": 10
+            },
+            {
+              "type": "OUTBOUND",
+              "calculatedOption": "HV15KU",
+              "price": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

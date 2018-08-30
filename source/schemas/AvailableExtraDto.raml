@@ -1,0 +1,26 @@
+#% RAML 1.0 AvailableExtraDto
+{
+  "type": "object",
+  "properties":{
+    "id": {
+        "type": "string"
+    },
+    "disabled": {
+        "type": "boolean"
+    },
+    "purchased": {
+        "type": "boolean"
+    },
+    "minPrice?": {
+        "type": "number",
+        "format": "double"
+    },
+    "recipients?": {
+        "type": "ExtraRecipientDto[]"
+    },
+    "displayOrder?": {
+        "type": "number",
+        "format": "int"
+    }
+   }
+}

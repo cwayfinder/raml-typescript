@@ -1,0 +1,16 @@
+#% RAML 1.0 SortDto
+{
+   "type": object,
+   "properties": {
+      "direction": {
+        type: SortDirection,
+        required: true,
+        default: "ASC"
+      },
+      "field": {
+        type: string,
+        required: true,
+        default: "id"
+      }
+   }
+}

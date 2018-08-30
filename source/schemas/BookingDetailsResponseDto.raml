@@ -1,0 +1,27 @@
+#% RAML 1.0 BookingDetailsResponseDto
+{
+    "type": "object",
+        "properties": {
+            "season": {
+                "type": "string"
+            },
+            "catalog": {
+                "type": "string"
+            },
+            "productId": {
+                "type": "string"
+                        },
+            "details": {
+                "type": "BookingDetailsDto"
+            },
+            "leadPaxSurname": {
+                 "type": "string"
+            },
+            "leadPaxEmail": {
+                 "type": "string"
+            },
+            "error?": {
+                 "type": "ErrorDto"
+            }
+        }
+}

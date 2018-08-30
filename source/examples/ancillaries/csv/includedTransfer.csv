@@ -1,0 +1,8 @@
+brand,catalogue,arrivalAirport,season,inclusion
+*,*,*,*,N
+NVB,NAVL,*,S17,N
+NVB,NAVL,*,W17,B
+NVB,NAVL,BKK,*,B
+NVB,NAVL,CNX,*,B
+NVN,*,*,S18,B
+NVN,*,*,W18,B

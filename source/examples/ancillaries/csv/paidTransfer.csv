@@ -1,0 +1,4 @@
+season,direction,arrivalAirport,ortsCode,transfer,code,active
+*,WHOLE_TRIP,PMI,*,T,119AKC,0
+*,OUTBOUND,ZTH,1518,T,15067U,1
+*,INBOUND,ZTH,3361,T,33062H,1

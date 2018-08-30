@@ -1,0 +1,18 @@
+{
+  "siteCode": "NECBE",
+  "language": "NL",
+  "inTransportClass": "2",
+  "outTransportClass":"2",
+  "brandCode":"NVB",
+  "catalog": "YBEL",
+  "departureDateTime":"13042018",
+  "duration":"7",
+  "departureAirportCode":"BRU",
+  "arrivalAirportCode":"DPS",
+  "passengerAgeCodes": [ "ADULT" ],
+  "searchResultId": "kz9q9llskjnvn-ynvn-h1711-anvr.hot-1515157338",
+  "accommodationCode": "H1711A",
+  "roomCode": "1A",
+  "mealPlanCode": "AO",
+  "occupancy": "2,15,17"
+}

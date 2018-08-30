@@ -1,0 +1,8 @@
+brand,catalogue,season,carrier1,carrier2,transportClass,departureAirport,arrivalAirport,luggageIncluded,maxKgHoldLuggage,maxKgHoldLuggageInfant,maxKgHandLuggage,maxPcsHandLuggage,maxSizesHandLuggage
+*,*,*,*,*,*,*,*,N,0,0,0,0,
+IWP,NVLW,*,*,*,*,*,*,N,0,0,6,1,55 x 40 x 25 cm
+IWP,NVLW,*,*,*,P,*,*,Y,25,0,10,1,55 x 40 x 25 cm
+NVB,*,*,*,*,*,*,*,N,0,0,6,1,55 x 40 x 20 cm
+NVB,*,*,*,*,2,BRU,CUN,Y,20,0,6,1,55 x 40 x 20 cm
+NVN,*,*,VY,*,*,*,*,Y,23,10,0,0,
+NVN,YNVN,*,*,*,*,*,*,V,0,0,0,0,

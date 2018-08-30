@@ -1,0 +1,14 @@
+{
+  "pageNumber": 0,
+  "pageSize": 20,
+  "sort": {
+    "direction": "ASC",
+    "field": "id"
+  },
+  "filter": [{
+    "field": "arrivalAirport",
+    "type": "CONTAINS",
+    "value": "ABC",
+    "filterType": "TEXT"
+  }]
+}

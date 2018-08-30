@@ -1,0 +1,117 @@
+#% RAML 1.0 AlternativeFlightBound
+{
+    "type": "object",
+    "properties": {
+        "arrivalAirportCode": {
+            "type": "string"
+        },
+        "arrivalAirportDisplayText?": {
+            "type": "string"
+        },
+        "arrivalAirportKey?": {
+            "type": "string"
+        },
+        "arrivalAirportTerminal?": {
+            "type": "string"
+        },
+        "arrivalDateTime?": {
+            "type": "string",
+            "pattern": "\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}"
+        },
+        "arrivalTimeAvailable?": {
+            "type": "boolean",
+            "default": true
+        },
+        "brochureCode?": {
+            "type": "string"
+        },
+        "cabinClass": {
+            "type": "CabinClass"
+        },
+        "chain?": {
+            "type": "string"
+        },
+        "checkInDate?": {
+            "type": "string",
+            "pattern": "\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}"
+        },
+        "code?": {
+            "type": "string"
+        },
+        "departureAirportCode": {
+            "type": "string"
+        },
+        "departureAirportDisplayText?": {
+            "type": "string"
+        },
+        "departureAirportKey?": {
+            "type": "string"
+        },
+        "departureAirportTerminal?": {
+            "type": "string"
+        },
+        "departureDateTime?": {
+            "type": "string",
+            "pattern": "\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}"
+        },
+        "departureTimeAvailable?": {
+            "type": "boolean",
+            "default": true
+        },
+        "directionInd": {
+            "type": "Direction"
+        },
+        "duration?": {
+            "type": "string"  # xs:duration
+        },
+        "flightCode?": {
+            "type": "string"
+        },
+        "flightNumber?": {
+            "type": "string"
+        },
+        "flightSlot?": {
+            "type": "string"
+        },
+        flightKey: {
+            "type": "string"
+        },
+        packageFlightKey: {
+            "type": "string"
+        },
+        "infoSource?": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 32
+        },
+        "operatingAirlineCode?": {
+            "type": "string"
+        },
+        "operatingAirlineDisplayText?": {
+            "type": "string"
+        },
+        "operatingAirlineKey?": {
+            "type": "string"
+        },
+        "order?": {
+            "type": "number",
+            "format" : "int",
+            "default": 1
+        },
+        "originalTransportClass?": {
+            "type": "string"
+        },
+        "provider?": {
+            "type": "string"
+        },
+        "transportClass?": {
+            "type": "string"
+        },
+        "travelCode?": {
+            "type": "string"
+        },
+        "yieldLateSup?": {
+            "type": "string"
+        }
+    }
+}

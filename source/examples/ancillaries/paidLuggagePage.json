@@ -1,0 +1,35 @@
+{
+  "total": 30,
+  "pageSize": 1,
+  "pageNumber": 1,
+  "items": [
+    {
+      "id": 3,
+      "season": {
+        "id": 2,
+        "value": "S19"
+      },
+      "departureAirport": {
+        "id": 5,
+        "value": "NYC"
+      },
+      "arrivalAirport": {
+        "id": 32,
+        "value": "MHA"
+      },
+      "carrier": {
+        "id": 56,
+        "value": "LLX"
+      },
+      "direction": "OUTBOUND",
+      "code": "BAGAGA",
+      "bookingCategory": {
+        "id": 1,
+        "value": "SONS"
+      },
+      "includedAmount": 20,
+      "price": 22.00,
+      "active": true
+    }
+  ]
+}

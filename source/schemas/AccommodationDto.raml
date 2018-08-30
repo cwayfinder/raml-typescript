@@ -1,0 +1,13 @@
+#% RAML 1.0 AccommodationDto
+{
+    "type": "object",    
+    "properties": {
+        "mealPlan": {
+            "type": "string"
+        },
+        "roomProfiles": {
+            "type": "RoomProfileDto[]",
+            "minItems": 1
+        }
+    }
+}

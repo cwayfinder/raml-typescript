@@ -1,0 +1,19 @@
+#% RAML 1.0 AlternativeFlightPackage
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "flightList": {
+            "type": "AlternativeFlightBound[]"
+        },
+        "packagePrice?": {
+            "type": "number",
+            "format": "double"
+        },
+        "currency?": {
+            "type": "string"
+        }
+    }
+}

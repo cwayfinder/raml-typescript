@@ -1,0 +1,36 @@
+#%RAML 1.0 PaidLuggageDto
+
+{
+    type: BaseConfigurationDto,
+    properties: {
+        departureAirport: {
+             type: DictionaryDto
+        },
+        arrivalAirport: {
+             type: DictionaryDto
+        },
+        carrier: {
+             type: DictionaryDto
+        },
+        direction: {
+             type: Direction
+        },
+        code: {
+             type: string
+        },
+        bookingCategory: {
+             type: DictionaryDto
+        },
+        includedAmount: {
+             type: number,
+             format: int
+        },
+        price: {
+             type: number,
+             format: double
+        },
+        active: {
+             type: boolean
+        }
+    }
+}

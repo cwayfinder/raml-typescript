@@ -1,0 +1,60 @@
+#% RAML 1.0 FlightBoundDto
+{
+    "type": "object",
+    "properties": {
+        "departureDate": {
+            "type": "string"
+        },
+        "carrierCodes?": {
+            "type": "array",
+            "items":{
+                "type": "string"
+              }
+        },
+        "carriers": {
+           "type": "array",
+            "items":{
+              "type": "string"
+              }
+            },
+        "stops?": {
+            "type": "array",
+             "items":{
+                 "type": "string"
+             }
+        },
+        "stopCodes?": {
+            "type": "array",
+             "items":{
+                "type": "string"
+             }
+        },
+        "departureTime?": {
+            "type": "string"
+        },
+        "departureAirport": {
+            "type": "string"
+        },
+        "departureAirportCode?": {
+           "type": "string"
+        },
+        "arrivalTime?": {
+            "type": "string"
+        },
+        "arrivalAirportCode?": {
+            "type": "string"
+        },
+        "arrivalAirport": {
+            "type": "string"
+        },
+        "transportClass": {
+            "type": "string"
+        },
+        "passengers?": {
+             "type": "array",
+             "items":{
+                 "type": "FlightPassengerDto"
+             }
+        }
+    }
+}

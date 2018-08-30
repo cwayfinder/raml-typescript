@@ -1,0 +1,7 @@
+{
+  "status": 500,
+  "messages": ["Something gone wrong", "booking ref is 'null'"],
+  "code": 1,
+  "moreInfo": "http://booking-amendment1.integration.thomascook.io:8080/errors/40401",
+  "service": "Booking-amendment"
+}

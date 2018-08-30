@@ -1,0 +1,27 @@
+[{
+  "id": "LUGGAGE",
+  "recipients": [{
+    "type": "PASSENGER",
+    "id": "001",
+    "segments": [{
+      "type": "INBOUND",
+      "selectedOption": "HV15KT"
+    },
+      {
+        "type": "OUTBOUND",
+        "selectedOption": "HV30KU"
+      }]
+  },
+    {
+      "type": "PASSENGER",
+      "id": "002",
+      "segments": [{
+        "type": "INBOUND",
+        "selectedOption": "HV15KT"
+      },
+        {
+          "type": "OUTBOUND",
+          "selectedOption": "HV30KU"
+        }]
+    }]
+}]

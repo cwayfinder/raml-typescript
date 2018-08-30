@@ -1,0 +1,25 @@
+#%RAML 1.0 PaidTransferDto
+
+{
+    type: BaseConfigurationDto,
+    properties: {
+        direction: {
+             type: Direction
+        },
+        arrivalAirport: {
+             type: DictionaryDto
+        },
+        ortsCode: {
+             type: string
+        },
+        transfer: {
+             type: TransferType
+        },
+        code: {
+             type: string
+        },
+        active: {
+             type: boolean
+        }
+    }
+}

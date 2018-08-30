@@ -1,0 +1,958 @@
+#%RAML 1.0
+title: Nurvis API
+version: v1.37
+baseUri: /api
+
+types:
+  AccommodationDto: !include schemas/AccommodationDto.raml
+  BookingDetailsDto: !include schemas/BookingDetailsDto.raml
+  SiteKey: !include schemas/SiteKey.raml
+  BookingDetailsResponseDto: !include schemas/BookingDetailsResponseDto.raml
+  ExtraDetailsDto: !include schemas/ExtraDetailsDto.raml
+  CostSummaryDto: !include schemas/CostSummaryDto.raml
+  DateRangeDto: !include schemas/DataRangeDto.raml
+  ErrorDto: !include schemas/ErrorDto.raml
+  ErrorInfo: !include schemas/ErrorInfo.raml
+  FlightBoundDto: !include schemas/FlightBoundDto.raml
+  FlightsDto: !include schemas/FlightsDto.raml
+  FlightPassengerDto: !include schemas/FlightPassengerDto.raml
+  FlightExtraDto: !include schemas/FlightExtraDto.raml
+  TripExtraDto: !include schemas/TripExtraDto.raml
+  OtherExtraDto: !include schemas/OtherExtraDto.raml
+  Language: !include schemas/Language.raml
+  PackageDetailsDto: !include schemas/PackageDetailsDto.raml
+  PassengerDto: !include schemas/PassengerDto.raml
+  RoomProfileDto: !include schemas/RoomProfileDto.raml
+  SiteCode: !include schemas/SiteCode.raml
+  Status: !include schemas/Status.raml
+  AgeCode: !include schemas/AgeCode.raml
+  PriceLineDto: !include schemas/PriceLineDto.raml
+  PriceLineItemDto: !include schemas/PriceLineItemDto.raml
+  PassengerPriceLineItemDto: !include schemas/PassengerPriceLineItemDto.raml
+  AvailableExtraDto: !include schemas/AvailableExtraDto.raml
+  ExtraRecipientType: !include schemas/ExtraRecipientType.raml
+  ExtraSegmentDto: !include schemas/ExtraSegmentDto.raml
+  ExtraRecipientDto: !include schemas/ExtraRecipientDto.raml
+  SegmentType: !include schemas/SegmentType.raml
+  ExtraOptionDto: !include schemas/ExtraOptionDto.raml
+  CalculatedExtraDto: !include schemas/CalculatedExtraDto.raml
+  PriceCalculationResponseDto: !include schemas/PriceCalculationResponseDto.raml
+  PriceCalculationRequestDto: !include schemas/PriceCalculationRequestDto.raml
+  AccountPaymentInfoDto: !include schemas/AccountPaymentInfoDto.raml
+  ContactDetailsDto: !include schemas/ContactDetailsDto.raml
+  PriceExtraRecipientDto: !include schemas/PriceExtraRecipientDto.raml
+  SegmentOptionDto: !include schemas/SegmentOptionDto.raml
+  CalculatedExtraRecipientDto: !include schemas/CalculatedExtraRecipientDto.raml
+  CalculatedExtraSegmentDto: !include schemas/CalculatedExtraSegmentDto.raml
+  AlternativeFlightRequest: !include schemas/AlternativeFlightRequest.raml
+  CabinClass: !include schemas/CabinClass.raml
+  Direction: !include schemas/Direction.raml
+  AlternativeFlightBound: !include schemas/AlternativeFlightBound.raml
+  AlternativeFlightPackage: !include schemas/AlternativeFlightPackage.raml
+  AlternativeFlightsDto: !include schemas/AlternativeFlightsDto.raml
+  SelectedExtraId: !include schemas/SelectedExtraId.raml
+  PageDto: !include schemas/PageDto.raml
+  IncludedLuggageDto: !include schemas/ancillaries/luggage/IncludedLuggageDto.raml
+  IncludedLuggagePageDto: !include schemas/ancillaries/luggage/IncludedLuggagePageDto.raml
+  PaidLuggageDto: !include schemas/ancillaries/luggage/PaidLuggageDto.raml
+  PaidLuggagePageDto: !include schemas/ancillaries/luggage/PaidLuggagePageDto.raml
+  IncludedTransferDto: !include schemas/ancillaries/transfer/IncludedTransferDto.raml
+  IncludedTransferPageDto: !include schemas/ancillaries/transfer/IncludedTransferPageDto.raml
+  PaidTransferDto: !include schemas/ancillaries/transfer/PaidTransferDto.raml
+  PaidTransferPageDto: !include schemas/ancillaries/transfer/PaidTransferPageDto.raml
+  BaseConfigurationDto: !include schemas/ancillaries/BaseConfigurationDto.raml
+  BaseIncludedConfigurationDto: !include schemas/ancillaries/BaseIncludedConfigurationDto.raml
+  DictionaryDto: !include schemas/dictionaries/DictionaryDto.raml
+  TransferType: !include schemas/ancillaries/transfer/TransferType.raml
+  DictionaryPageDto: !include schemas/dictionaries/DictionaryPageDto.raml
+  BrandPageDto: !include schemas/dictionaries/BrandPageDto.raml
+  BrandDto: !include schemas/dictionaries/BrandDto.raml
+  BaseDto: !include schemas/BaseDto.raml
+  ImportResultDto: !include schemas/ancillaries/ImportResultDto.raml
+  SortDirection: !include schemas/SortDirection.raml
+  SortDto: !include schemas/SortDto.raml
+  FilterType: !include schemas/FilterType.raml
+  FilterFieldType: !include schemas/FilterFieldType.raml
+  FilterDto: !include schemas/FilterDto.raml
+  DataRequestDto: !include schemas/DataRequestDto.raml
+  EnumDto: !include schemas/dictionaries/EnumDto.raml
+  InclusionType: !include schemas/ancillaries/InclusionType.raml
+  BaseConfigErrorDto: !include schemas/BaseConfigErrorDto.raml
+  ConfigErrorDto: !include schemas/ConfigErrorDto.raml
+  ConfigVersion: !include schemas/ancillaries/ConfigVersion.raml
+  TransportClass: !include schemas/ancillaries/luggage/TransportClass.raml
+  ModificationHistoryAction: !include schemas/ModificationHistoryAction.raml
+  ModificationHistoryTable: !include schemas/ModificationHistoryTable.raml
+  ModificationHistoryDto: !include schemas/ModificationHistoryDto.raml
+  ModificationHistoryPageDto: !include schemas/ModificationHistoryPageDto.raml
+  AncillariesAvailabilityRequest: !include schemas/AncillariesAvailabilityRequest.raml
+  AncillariesAvailabilityResponse: !include schemas/AncillariesAvailabilityResponse.raml
+  SimplePassengerDto: !include schemas/SimplePassengerDto.raml
+
+/bookings:
+  /{bookingRef}:
+    get:
+      description: Get the booking details with `bookingRef = {bookingRef}`
+      headers:
+        authorization:
+          description: authorization token
+      queryParameters:
+        siteKey: SiteKey
+      responses:
+        200:
+          body:
+            application/json:
+              type: BookingDetailsResponseDto
+              example: !include examples/bookingDetailsResponse.json
+        500:
+          body:
+            application/json:
+              type: ErrorDto
+              example: !include examples/errordto.json
+        404:
+          body:
+            application/json:
+              type: ErrorDto
+              example: !include examples/errordto.json
+    /prices:
+       post:
+         description: Get prices for selected extra and price ticket
+         headers:
+           authorization:
+             description: authorization token
+         queryParameters:
+           siteKey: SiteKey
+         body:
+           application/json:
+               type: PriceCalculationRequestDto[]
+               example: !include examples/priceCalculateRequest.json
+         responses:
+            200:
+              body:
+                application/json:
+                   type: PriceCalculationResponseDto
+                   example: !include examples/priceCalculateResponse.json
+            503:
+              body:
+                application/json:
+                   type: ErrorDto
+    /commit:
+      put:
+        description: Commit booking changes
+        headers:
+          authorization:
+            description: authorization token
+        queryParameters:
+          siteKey: SiteKey
+        responses:
+          200:
+            body:
+              application/json:
+                type: BookingDetailsResponseDto
+                example: !include examples/bookingDetailsResponse.json
+          500:
+            body:
+              application/json:
+                type: ErrorDto
+                example: !include examples/errordto.json
+          404:
+            body:
+              application/json:
+                type: ErrorDto
+                example: !include examples/errordto.json
+/ancillaries:
+  /login:
+    get:
+      description: Login Endpoint
+      responses:
+  /included-transfer:
+    post:
+      description: Create included transfer configuration
+      headers:
+        x-site-code:
+          description: Site code
+          required: true
+          example: NECBE
+      body:
+        application/json:
+          type: IncludedTransferDto
+          example: !include examples/ancillaries/includedTransfer.json
+      responses:
+        200:
+          body:
+             application/json:
+               type: IncludedTransferDto
+    /{includedTransferId}:
+      uriParameters:
+         includedTransferId:
+            type: number
+            format: int
+      put:
+        description: Update included transfer configuration
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        body:
+          application/json:
+            type: IncludedTransferDto
+            example: !include examples/ancillaries/includedTransfer.json
+        responses:
+          200:
+            body:
+               application/json:
+                 type: IncludedTransferDto
+      delete:
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        description: Delete included transfer configuration
+        responses:
+          204:
+    /import:
+      post:
+        description: Import included transfer configuration
+        body:
+          multipart/form-data:
+            properties:
+              file:
+                description: csv file
+                required: true
+                type: file
+                example: !include examples/ancillaries/csv/includedTransfer.csv
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        responses:
+          200:
+            body:
+               application/json:
+                 type: ImportResultDto
+    /list:
+      post:
+        description: Get included transfer configuration
+        body:
+          application/json:
+            type: DataRequestDto
+            example: !include examples/dataRequestDto.json
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        responses:
+          200:
+            body:
+              application/json:
+                type: IncludedTransferPageDto
+                example: !include examples/ancillaries/includedTransferPage.json
+    /export:
+      get:
+        description: Export included transfer configuration
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        responses:
+          200:
+            body:
+             text/csv:
+              properties:
+                file:
+                  description: csv file
+                  type: file
+                  example: !include examples/ancillaries/csv/includedTransfer.csv
+  /paid-transfer:
+    post:
+      headers:
+         x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+      description: Create paid transfer configuration
+      body:
+        application/json:
+          type: PaidTransferDto
+          example: !include examples/ancillaries/paidTransfer.json
+      responses:
+        200:
+          body:
+             application/json:
+               type: PaidTransferDto
+    /{paidTransferId}:
+      uriParameters:
+         paidTransferId:
+            type: number
+            format: int
+      put:
+        headers:
+            x-site-code:
+                description: Site code
+                required: true
+                example: NECBE
+        description: Update paid transfer configuration
+        body:
+          application/json:
+            type: PaidTransferDto
+            example: !include examples/ancillaries/paidTransfer.json
+        responses:
+          200:
+            body:
+               application/json:
+                 type: PaidTransferDto
+      delete:
+        headers:
+          x-site-code:
+              description: Site code
+              required: true
+              example: NECBE
+        description: Delete paid transfer configuration
+        responses:
+          204:
+    /import:
+      post:
+        description: Import paid transfer configuration
+        body:
+          multipart/form-data:
+            properties:
+              file:
+                description: csv file
+                required: true
+                type: file
+                example: !include examples/ancillaries/csv/paidTransfer.csv
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        responses:
+          200:
+            body:
+               application/json:
+                 type: ImportResultDto
+    /list:
+       post:
+        description: Get paid transfer configuration
+        body:
+             application/json:
+               type: DataRequestDto
+               example: !include examples/dataRequestDto.json
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        responses:
+          200:
+            body:
+               application/json:
+                 type: PaidTransferPageDto
+                 example: !include examples/ancillaries/paidTransferPage.json
+    /export:
+       get:
+        description: Export paid transfer configuration
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        responses:
+          200:
+            body:
+              text/csv:
+                properties:
+                  file:
+                    description: csv file
+                    type: file
+                    example: !include examples/ancillaries/csv/paidTransfer.csv
+  /included-luggage:
+    post:
+      description: Create included luggage configuration
+      body:
+        application/json:
+          type: IncludedLuggageDto
+          example: !include examples/ancillaries/includedLuggage.json
+      headers:
+        x-site-code:
+          description: Site code
+          required: true
+          example: NECBE
+      responses:
+        200:
+          body:
+             application/json:
+               type: IncludedLuggageDto
+    /{includedLuggageId}:
+      uriParameters:
+         includedLuggageId:
+            type: number
+            format: int
+      put:
+        description: Update included luggage configuration
+        body:
+          application/json:
+            type: IncludedLuggageDto
+            example: !include examples/ancillaries/includedLuggage.json
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        responses:
+          200:
+            body:
+               application/json:
+                 type: IncludedLuggageDto
+      delete:
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        description: Delete included luggage configuration
+        responses:
+          204:
+    /import:
+      post:
+        description: Import included luggage configuration
+        body:
+          multipart/form-data:
+            properties:
+              file:
+                description: csv file
+                required: true
+                type: file
+                example: !include examples/ancillaries/csv/includedLuggage.csv
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        responses:
+          200:
+            body:
+               application/json:
+                 type: ImportResultDto
+    /list:
+      post:
+        description: Get included luggage configuration
+        body:
+          application/json:
+            type: DataRequestDto
+            example: !include examples/dataRequestDto.json
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        responses:
+          200:
+            body:
+               application/json:
+                 type: IncludedLuggagePageDto
+                 example: !include examples/ancillaries/includedLuggagePage.json
+    /export:
+       get:
+        description: Export included luggage configuration
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        responses:
+          200:
+            body:
+              text/csv:
+                properties:
+                  file:
+                    description: csv file
+                    type: file
+                    example: !include examples/ancillaries/csv/includedLuggage.csv
+  /paid-luggage:
+    post:
+      description: Create paid luggage configuration
+      body:
+        application/json:
+          type: PaidLuggageDto
+          example: !include examples/ancillaries/paidLuggage.json
+      headers:
+        x-site-code:
+          description: Site code
+          required: true
+          example: NECBE
+      responses:
+        200:
+          body:
+             application/json:
+               type: PaidLuggageDto
+    /{paidLuggageId}:
+      uriParameters:
+        paidLuggageId:
+            type: number
+            format: int
+      put:
+        description: Update paid luggage configuration
+        body:
+          application/json:
+            type: PaidLuggageDto
+            example: !include examples/ancillaries/paidLuggage.json
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        responses:
+          200:
+            body:
+               application/json:
+                 type: PaidLuggageDto
+      delete:
+        description: Delete paid luggage configuration
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        responses:
+          204:
+    /import:
+      post:
+        description: Import paid luggage configuration
+        body:
+          multipart/form-data:
+            properties:
+              file:
+                description: csv file
+                required: true
+                type: file
+                example: !include examples/ancillaries/csv/paidLuggage.csv
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        responses:
+          200:
+            body:
+               application/json:
+                 type: ImportResultDto
+    /list:
+      post:
+        description: Get paid luggage configuration
+        body:
+          application/json:
+            type: DataRequestDto
+            example: !include examples/dataRequestDto.json
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        responses:
+          200:
+            body:
+              application/json:
+                type: PaidLuggagePageDto
+                example: !include examples/ancillaries/paidLuggagePage.json
+    /export:
+       get:
+        description: Export paid luggage configuration
+        headers:
+          x-site-code:
+            description: Site code
+            required: true
+            example: NECBE
+        responses:
+          200:
+            body:
+              text/csv:
+                properties:
+                  file:
+                    description: csv file
+                    type: file
+                    example: !include examples/ancillaries/csv/paidLuggage.csv
+/available-ancillaries:
+  post:
+    description: Get available ancillaries
+    body:
+      application/json:
+        type: AncillariesAvailabilityRequest
+    responses:
+      200:
+        body:
+           application/json:
+             type: AncillariesAvailabilityResponse
+/dictionaries:
+  /carriers:
+    post:
+      description: Create carrier
+      body:
+        application/json:
+          type: DictionaryDto
+          example: !include examples/dictionaries/carrier.json
+      responses:
+        200:
+          body:
+             application/json:
+               type: DictionaryDto
+               example: !include examples/dictionaries/carrier.json
+    /{carrierId}:
+      uriParameters:
+            carrierId:
+               type: number
+               format: int
+      put:
+        description: Update carrier
+        body:
+          application/json:
+            type: DictionaryDto
+            example: !include examples/dictionaries/carrier.json
+        responses:
+          200:
+            body:
+               application/json:
+                 type: DictionaryDto
+                 example: !include examples/dictionaries/carrier.json
+      delete:
+        description: Delete carrier
+        responses:
+          204:
+    /list:
+      post:
+        description: Get carriers
+        body:
+          application/json:
+            type: DataRequestDto
+            example: !include examples/dataRequestDto.json
+        responses:
+          200:
+            body:
+              application/json:
+                type: DictionaryPageDto
+                example: !include examples/dictionaries/carriers.json
+  /airports:
+    post:
+      description: Create airport
+      body:
+        application/json:
+          type: DictionaryDto
+          example: !include examples/dictionaries/airport.json
+      responses:
+        200:
+          body:
+             application/json:
+               type: DictionaryDto
+               example: !include examples/dictionaries/airport.json
+    /{airportId}:
+      uriParameters:
+            airportId:
+               type: number
+               format: int
+      put:
+        description: Update airport
+        body:
+          application/json:
+            type: DictionaryDto
+            example: !include examples/dictionaries/airport.json
+        responses:
+          200:
+            body:
+               application/json:
+                 type: DictionaryDto
+                 example: !include examples/dictionaries/airport.json
+      delete:
+        description: Delete airport
+        responses:
+          204:
+    /list:
+      post:
+        description: Get airports
+        body:
+          application/json:
+            type: DataRequestDto
+            example: !include examples/dataRequestDto.json
+        responses:
+          200:
+            body:
+              application/json:
+                type: DictionaryPageDto
+                example: !include examples/dictionaries/airports.json
+  /seasons:
+    post:
+      description: Create season
+      body:
+        application/json:
+          type: DictionaryDto
+          example: !include examples/dictionaries/season.json
+      responses:
+        200:
+          body:
+             application/json:
+               type: DictionaryDto
+               example: !include examples/dictionaries/season.json
+    /{seasonId}:
+      uriParameters:
+            seasonId:
+               type: number
+               format: int
+      put:
+        description: Update season
+        body:
+          application/json:
+            type: DictionaryDto
+            example: !include examples/dictionaries/season.json
+        responses:
+          200:
+            body:
+               application/json:
+                 type: DictionaryDto
+                 example: !include examples/dictionaries/season.json
+      delete:
+        description: Delete season
+        responses:
+          204:
+    /list:
+      post:
+        description: Get seasons
+        body:
+          application/json:
+            type: DataRequestDto
+            example: !include examples/dataRequestDto.json
+        responses:
+          200:
+            body:
+              application/json:
+                type: DictionaryPageDto
+                example: !include examples/dictionaries/seasons.json
+  /catalogues:
+    post:
+      description: Create catalogue
+      body:
+        application/json:
+          type: DictionaryDto
+          example: !include examples/dictionaries/catalogue.json
+      responses:
+        200:
+          body:
+             application/json:
+               type: DictionaryDto
+               example: !include examples/dictionaries/catalogue.json
+    /{catalogueId}:
+      uriParameters:
+            catalogueId:
+               type: number
+               format: int
+      put:
+        description: Update catalogue
+        body:
+          application/json:
+            type: DictionaryDto
+            example: !include examples/dictionaries/catalogue.json
+        responses:
+          200:
+            body:
+               application/json:
+                 type: DictionaryDto
+                 example: !include examples/dictionaries/catalogue.json
+      delete:
+        description: Delete catalogue
+        responses:
+          204:
+    /list:
+      post:
+        description: Get catalogues
+        body:
+          application/json:
+            type: DataRequestDto
+            example: !include examples/dataRequestDto.json
+        responses:
+          200:
+            body:
+              application/json:
+                type: DictionaryPageDto
+                example: !include examples/dictionaries/catalogues.json
+  /booking-categories:
+    post:
+      description: Create booking category
+      body:
+        application/json:
+          type: DictionaryDto
+          example: !include examples/dictionaries/bookingCategory.json
+      responses:
+        200:
+          body:
+             application/json:
+               type: DictionaryDto
+               example: !include examples/dictionaries/bookingCategory.json
+    /{bookingCategoryId}:
+      uriParameters:
+        bookingCategoryId:
+           type: number
+           format: int
+      put:
+        description: Update booking category
+        body:
+          application/json:
+            type: DictionaryDto
+            example: !include examples/dictionaries/bookingCategory.json
+        responses:
+          200:
+            body:
+               application/json:
+                 type: DictionaryDto
+                 example: !include examples/dictionaries/bookingCategory.json
+      delete:
+        description: Delete booking category
+        responses:
+          204:
+    /list:
+      post:
+        description: Get booking categories
+        body:
+          application/json:
+            type: DataRequestDto
+            example: !include examples/dataRequestDto.json
+        responses:
+          200:
+            body:
+              application/json:
+                type: DictionaryPageDto
+                example: !include examples/dictionaries/bookingCategories.json
+  /brands:
+    post:
+      description: Create brand
+      body:
+        application/json:
+          type: BrandDto
+          example: !include examples/dictionaries/brand.json
+      responses:
+        200:
+          body:
+             application/json:
+               type: BrandDto
+               example: !include examples/dictionaries/brand.json
+    /{brandId}:
+      uriParameters:
+            brandId:
+               type: number
+               format: int
+      put:
+        description: Update brand
+        body:
+          application/json:
+            type: BrandDto
+            example: !include examples/dictionaries/brand.json
+        responses:
+          200:
+            body:
+               application/json:
+                 type: BrandDto
+                 example: !include examples/dictionaries/brand.json
+      delete:
+        description: Delete brand
+        responses:
+          204:
+    /list:
+      post:
+        description: Get brands
+        body:
+          application/json:
+            type: DataRequestDto
+            example: !include examples/dataRequestDto.json
+        responses:
+          200:
+            body:
+              application/json:
+                type: BrandPageDto
+                example: !include examples/dictionaries/brands.json
+  /enums:
+    /{enumName}:
+      get:
+        description: get values for enum
+        responses:
+          200:
+            body:
+             application/json:
+               type: EnumDto
+               example: {"values":["value1","value2"]}
+/history:
+  /list:
+    post:
+      description: Get modification history
+      body:
+        application/json:
+          type: DataRequestDto
+          example: !include examples/dataRequestDto.json
+      headers:
+        x-site-code:
+          description: Site code
+          required: true
+          example: NECBE
+      responses:
+        200:
+          body:
+            application/json:
+              type: ModificationHistoryPageDto
+              example: !include examples/modificationHistoryPageDto.json
+/errors:
+  get:
+    description: Get all supported errors
+    responses:
+      200:
+        body:
+           application/json:
+             type: ErrorInfo[]
+  /{errorCode}:
+    get:
+      description: get error by code
+      responses:
+        200:
+          body:
+            application/json:
+              type: ErrorInfo
+/flights:
+  post:
+    description: Get alternative flights for search parameters and cache them
+    body:
+      application/json:
+        type: AlternativeFlightRequest
+        example: !include examples/alternativeRequest.json
+    responses:
+      200:
+        body:
+          application/json:
+            type: AlternativeFlightsDto
+      503:
+        body:
+          application/json:
+            type: ErrorDto
+  /{searchResultId}:
+    get:
+      description: Get alternative flights by searchResultId from cache
+      responses:
+        200:
+          body:
+            application/json:
+              type: AlternativeFlightPackage[]
+        503:
+          body:
+            application/json:
+              type: ErrorDto
+    /{flightId}:
+      get:
+        description: Get one alternative flight by searchResultId and flight id from cache
+        responses:
+          200:
+            body:
+              application/json:
+                type: AlternativeFlightPackage
+          503:
+            body:
+              application/json:
+                type: ErrorDto

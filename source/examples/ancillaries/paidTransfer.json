@@ -1,0 +1,16 @@
+{
+  "id": 3,
+  "season": {
+    "id": 3,
+    "value": "W18"
+  },
+  "direction": "WHOLE_TRIP",
+  "arrivalAirport": {
+    "id": 4,
+    "value": "PHA"
+  },
+  "ortsCode": "1404",
+  "transfer": "T",
+  "code": "14282A",
+  "active": true
+}

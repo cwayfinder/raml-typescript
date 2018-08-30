@@ -1,0 +1,16 @@
+#% RAML 1.0 PriceLineDto
+{
+    "type": "object",
+    "properties": {
+        "title": {
+            "type": "string"
+        },
+        "price": {
+             "type": "number",
+             "format": "double"
+        },
+        "items?": {
+            "type": "PriceLineItemDto[]"
+        }
+    }
+}

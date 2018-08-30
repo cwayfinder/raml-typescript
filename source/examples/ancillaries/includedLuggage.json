@@ -1,0 +1,42 @@
+{
+  "id": 546899450,
+  "season": {
+    "id": 2,
+    "value": "S19"
+  },
+  "brand": {
+    "id": 4,
+    "value": "NVN",
+    "bookingCategory": {
+      "id": "123",
+      "value": "PALU"
+    }
+  },
+  "catalogue": {
+    "id": 52,
+    "value": "NVLI"
+  },
+  "arrivalAirport": {
+    "id": 13,
+    "value": "BRU"
+  },
+  "carrier1": {
+    "id": 64,
+    "value": "LLX"
+  },
+  "carrier2": {
+    "id": 34,
+    "value": "HV"
+  },
+  "transportClass": "X",
+  "departureAirport": {
+    "id": 45,
+    "value": "AMS"
+  },
+  "luggageIncluded": "Y",
+  "maxKgHoldLuggage": 25,
+  "maxKgHoldLuggageInfant": 0,
+  "maxKgHandLuggage": 10,
+  "maxPcsHandLuggage": 1,
+  "maxSizesHandLuggage": "55 x 40 x 25 cm"
+}

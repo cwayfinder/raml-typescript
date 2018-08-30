@@ -1,0 +1,268 @@
+{
+  "season": "S17",
+  "catalog": "NAVL",
+  "productId": "15155A",
+  "leadPaxSurname": "surname",
+  "leadPaxEmail": "test@test.com",
+  "details": {
+    "bookingRef": "96242960",
+    "brand": "NVB",
+    "status": "CANCELLED",
+    "packageDetails": {
+      "dateRange": {
+        "days": 8,
+        "daysToDeparture": 36,
+        "nights": 7,
+        "startDate": "2017-05-16T00:45:00Z",
+        "endDate": "2017-05-24T00:45:00Z"
+      }
+    },
+    "accommodation": {
+      "mealPlan": "All Inclusive",
+      "roomProfiles": [
+        {
+          "code": "C2",
+          "adults": 2,
+          "children": 0,
+          "infants": 0,
+          "description": "Some description",
+          "guestList": [
+            "1",
+            "2"
+          ],
+          "mealPlan": "All Inclusive"
+        }
+      ]
+    },
+    "flights":{
+      "departureAirportCode": "MAN",
+      "arrivalAirportCode": "MCO",
+      "inbound": {
+        "departureDate": "2017-05-16",
+        "carriers": [
+          "Condor", "ThaiAirways"
+        ],
+        "stops": ["Bangkok"],
+        "departureTime" : "00:45",
+        "departureAirport": "Heenvlucht",
+        "arrivalTime": "00:45",
+        "arrivalAirport": "Terugvlucht",
+        "transportClass": "P",
+        "passengers": [
+          {
+            "id": "1"
+          },
+          {
+            "id": "2"
+          }
+        ]
+      },
+      "outbound": {
+        "departureDate": "2017-05-24",
+        "carriers": [
+          "ThaiAirways","Condor"
+        ],
+        "stops": ["Bangkok"],
+        "departureTime" : "00:45",
+        "departureAirport": "Heenvlucht",
+        "arrivalTime": "00:45",
+        "arrivalAirport": "Terugvlucht",
+        "transportClass": "P"
+      }
+    },
+    "passengers": [
+      {
+        "id": "1",
+        "title": "Mr.",
+        "firstName": "Fon",
+        "lastName": "Netherland",
+        "gender": "MALE",
+        "ageCode":"ADULT"
+      },
+      {
+        "id": "2",
+        "title": "Mevr.",
+        "firstName": "Fon",
+        "lastName": "Netherland",
+        "gender": "FEMALE",
+        "ageCode":"ADULT"
+      }
+    ],
+    "costSummary": {
+      "flightExtras": [
+        {
+          "id": "BAGGAGE",
+          "inbound": [
+            {
+              "passengerId": "1",
+              "optionCode": "BAGAGA",
+              "optionValue": "25"
+            }
+          ],
+          "outbound": [
+            {
+              "passengerId": "1",
+              "optionCode": "BAGAGB",
+              "optionValue": "25"
+            }
+          ]
+        }
+      ],
+      "tripExtras": [
+        {
+          "id": "Insurance",
+          "wholeTrip": [
+            {
+              "passengerId": "1",
+              "optionCode": "00001K",
+              "optionValue": "insurance"
+            }
+          ]
+        }
+      ],
+      "otherExtras": [
+        {
+          "id": "FLEXXA",
+          "name": "Flex Light Individuel"
+        }
+      ],
+      "priceLines": [
+        {
+          "title": "Luggage",
+          "price": 70,
+          "items": [
+            {
+              "title": "inbound",
+              "items": [
+                {
+                  "paxId": "001",
+                  "selection": "15",
+                  "price": 10
+                },
+                {
+                  "paxId": "002",
+                  "selection": "15",
+                  "price": 10
+                },
+                {
+                  "paxId": "004",
+                  "selection": "20",
+                  "price": 15
+                }
+              ]
+            },
+            {
+              "title": "outbound",
+              "items": [
+                {
+                  "paxId": "001",
+                  "selection": "15",
+                  "price": 10
+                },
+                {
+                  "paxId": "002",
+                  "selection": "15",
+                  "price": 10
+                },
+                {
+                  "paxId": "004",
+                  "selection": "20",
+                  "price": 15
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Transfer",
+          "price": 350,
+          "items": [
+            {
+              "title": "Bus",
+              "price": 100
+            },
+            {
+              "title": "Taxi",
+              "price": 250
+            }
+          ]
+        },
+        {
+          "title": "Insurance",
+          "price": 165.4,
+          "items": [
+            {
+              "title": "Annuleringsverzekering",
+              "price": 124.22
+            },
+            {
+              "title": "Reisverzekering",
+              "price": 41.18
+            }
+          ]
+        },
+        {
+          "title": "Vluchtprijs",
+          "price": 900
+        },
+        {
+          "title": "Reserveringskosten",
+          "price": 25
+        }
+      ],
+      "totalAmount": 1072.25,
+      "paidAmount": 0.00,
+      "restDownPaymentAmount": 391.22,
+      "restDownPaymentDate": "2017-05-24",
+      "restPaymentAmount": 681.03,
+      "restPaymentDate": "2017-06-24",
+      "currency": "EUR"
+    },
+    "availableExtras": [{
+        "id": "LUGGAGE",
+        "disabled" : false,
+        "purchased" : false,
+        "minPrice" : 22.00,
+        "recipients": [
+        {
+          "type": "PASSENGER",
+          "id": "1",
+          "segments": [
+            {
+              "type": "OUTBOUND",
+              "defaultOption": "BAG20",
+              "purchasedOption" : "BAG20",
+              "description": "Ruimbagage heenvlucht",
+              "options": [
+                {
+                  "id": "BAG0",
+                  "description": "Geen ruimbagage"
+
+                },
+                {
+                  "id": "BAG20",
+                  "description": "1 stuk bagage max. 20kg"
+                }
+              ]
+            },
+            {
+              "type": "INBOUND",
+              "description": "Ruimbagage terugvlucht",
+              "defaultOption": "BAG20",
+              "options": [
+                {
+                  "id": "BAG0",
+                  "description": "Geen ruimbagage"
+                },
+                {
+                  "id": "BAG20",
+                  "description": "1 stuk bagage max. 20kg"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }]
+  }
+}

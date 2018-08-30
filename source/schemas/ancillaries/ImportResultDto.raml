@@ -1,0 +1,16 @@
+#%RAML 1.0 ImportResultDto
+
+{
+    type: object,
+    properties: {
+        numberOfRecords: {
+             type: number,
+             format: int
+        },
+        errors: {
+             type: array,
+             items: string,
+             required: false
+        }
+    }
+}

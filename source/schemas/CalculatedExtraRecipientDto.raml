@@ -1,0 +1,15 @@
+#% RAML 1.0 CalculatedExtraRecipientDto
+{
+    "type": "object",
+    "properties": {
+        "type":{
+            "type": "ExtraRecipientType"
+        },
+        "id?": {
+            "type": "string"
+        },
+        "segments": {
+            "type": "CalculatedExtraSegmentDto[]"
+        }
+    }
+}

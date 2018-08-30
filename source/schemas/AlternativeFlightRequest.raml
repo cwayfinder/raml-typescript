@@ -1,0 +1,55 @@
+#% RAML 1.0 AlternativeFlightRequest
+{
+    "type": "object",
+    "properties": {
+        "siteCode": {
+            "type": "SiteCode"
+        },
+        "language": {
+             "type": "Language"
+        },
+        "passengerAgeCodes": {
+            "type": "AgeCode[]"
+        },
+        "inTransportClass": {
+            "type": "string"
+        },
+        "outTransportClass": {
+            "type": "string"
+        },
+        "brandCode": {
+            "type": "string"
+        },
+        "catalog": {
+            "type": "string"
+        },
+        "departureDateTime": {
+            "type": "string",
+            "pattern": "\\d{8}"
+        },
+        "duration": {
+            "type": "string"
+        },
+        "departureAirportCode": {
+            "type": "string"
+        },
+        "arrivalAirportCode": {
+            "type": "string"
+        },
+        "providerPlayerhub?": {
+            "type": "boolean"
+        },
+        "accommodationCode?": {
+            "type": "string"
+        },
+        "roomCode?": {
+            "type": "string"
+        },
+        "mealPlanCode?": {
+            "type": "string"
+        },
+        "occupancy?": {
+            "type": "string"
+        }
+    }
+}

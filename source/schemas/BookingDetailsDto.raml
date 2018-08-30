@@ -1,0 +1,39 @@
+#% RAML 1.0 BookingDetailsDto
+{
+    "type": "object",
+        "properties": {
+            "bookingRef": {
+                "type": "string"
+            },
+            "brand": {
+                "type": "string"
+            },
+            "status": {
+                "type": "Status"
+            },
+            "packageDetails": {
+                "type": "PackageDetailsDto"
+            },
+            "accommodation": {
+                "type": "AccommodationDto"
+            },
+            "flights":{
+                "type": "FlightsDto"
+            },
+            "passengers": {
+                "type": "PassengerDto[]"
+            },
+            "costSummary": {
+                "type": "CostSummaryDto"
+            },
+            "availableExtras?":{
+                "type": "AvailableExtraDto[]"
+            },
+            "contactInfo?":{
+                "type": "ContactDetailsDto"
+            },
+            "paymentInfo?":{
+                "type": "AccountPaymentInfoDto"
+            }
+        }
+}

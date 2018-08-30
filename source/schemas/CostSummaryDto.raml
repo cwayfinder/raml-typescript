@@ -1,0 +1,43 @@
+#% RAML 1.0 CostSummaryDto
+{
+    "type": "object",
+    "properties": {
+        "flightExtras?": {
+            "type": "FlightExtraDto[]"
+        },
+        "tripExtras?": {
+             "type": "TripExtraDto[]"
+        },
+        "otherExtras?": {
+             "type": "OtherExtraDto[]"
+        },
+        "priceLines": {
+              "type": "PriceLineDto[]"
+        },
+        "totalAmount": {
+             "type": "number",
+             "format": "double"
+        },
+        "paidAmount": {
+              "type": "number",
+              "format": "double"
+        },
+        "restDownPaymentAmount?": {
+             "type": "number",
+             "format": "double"
+        },
+        "restDownPaymentDate?": {
+            "type": "string"
+        },
+        "restPaymentAmount?": {
+             "type": "number",
+             "format": "double"
+        },
+        "restPaymentDate?": {
+            "type": "string"
+        },
+        "currency": {
+            "type": "string"
+        }
+    }
+}

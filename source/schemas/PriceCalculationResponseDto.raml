@@ -1,0 +1,28 @@
+#% RAML 1.0 PriceCalculationResponseDto
+{
+    "type": "object",
+    "properties": {
+        "extras": {
+            "type": "CalculatedExtraDto[]"
+        },
+        "totalExtraAmount": {
+            "type": "number",
+            "format": "double"
+        },
+        "totalAmount": {
+            "type": "number",
+            "format": "double"
+        },
+        "currency":{
+            "type": "string"
+        },
+        "insuranceFee?":{
+            "type":"number",
+            "format": "double"
+        },
+        "totalExtraAmountWithFee?":{
+            "type":"number",
+            "format": "double"
+        }
+    }
+}

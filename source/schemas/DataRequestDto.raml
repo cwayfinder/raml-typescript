@@ -1,0 +1,28 @@
+#%RAML 1.0 DataRequestDto
+
+{
+    "type": object,
+    "properties": {
+        "sort": {
+            type: SortDto,
+            required: false
+        },
+        "pageSize": {
+            type: number,
+            required: false,
+            format: int,
+            default: 20
+        },
+        "pageNumber": {
+            type: number,
+            required: false,
+            format: int,
+            default: 0
+        },
+        "filter": {
+            type: array,
+            items: FilterDto,
+            required: false
+        }
+    }
+}

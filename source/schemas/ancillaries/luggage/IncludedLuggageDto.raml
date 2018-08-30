@@ -1,0 +1,44 @@
+#%RAML 1.0 IncludedLuggageDto
+
+{
+    type: BaseIncludedConfigurationDto,
+    properties: {
+        carrier1: {
+             type: DictionaryDto
+        },
+        carrier2: {
+             type: DictionaryDto
+        },
+        transportClass: {
+             type: string
+        },
+        departureAirport: {
+             type: DictionaryDto
+        },
+        luggageIncluded: {
+             type: InclusionType
+        },
+        maxKgHoldLuggage: {
+             type: number,
+             format: int
+        },
+        maxKgHoldLuggageInfant: {
+             type: number,
+             format: int
+        },
+        maxKgHandLuggage: {
+             type: number,
+             format: int,
+             required: false
+        },
+        maxPcsHandLuggage: {
+             type: number,
+             format: int,
+             required: false
+        },
+        maxSizesHandLuggage: {
+             type: string,
+             required: false
+        }
+    }
+}

@@ -1,0 +1,5 @@
+season,departureAirport,arrivalAirport,carrier,direction,code,bookingCategory,includedAmount,price,active
+*,*,*,*,OUTBOUND,BAGAGA,SONS,20,24.99,1
+*,*,*,*,INBOUND,BAGAGB,SONS,20,24.99,1
+*,*,*,5P,OUTBOUND,5P30KU,PALU,30,25.0,1
+*,SSH,*,SN,INBOUND,BAGAGB,SONS,20,24.99,1

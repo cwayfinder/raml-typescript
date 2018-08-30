@@ -1,0 +1,31 @@
+{
+  "total": 30,
+  "pageSize": 1,
+  "pageNumber": 1,
+  "items": [
+    {
+      "id": 1296394965,
+      "season": {
+        "id": 1,
+        "value": "S18"
+      },
+      "brand": {
+        "id": 2,
+        "value": "NVN",
+        "bookingCategory": {
+          "id": 2,
+          "value": "SONS"
+        }
+      },
+      "catalogue": {
+        "id": 3,
+        "value": "NVLI"
+      },
+      "arrivalAirport": {
+        "id": 23,
+        "value": "BRU"
+      },
+      "inclusion": "B"
+    }
+  ]
+}
